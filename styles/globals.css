@@ -2,26 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+body {
+  background-color: black;
+  overflow-x: hidden;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+p {
+  color: white;
+}
+
+.background-gradient {
+  background: linear-gradient(90deg, #2e1901, rgb(0, 0, 0), #2e1901);
+}
+
+.underline {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.underline::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #ff4d00;
+  transition: all 0.2s ease-in-out;
+}
+
+.underline:hover::before {
+  width: 100%;
+}
+
+/* The container for the scrollbar */
+::-webkit-scrollbar {
+  width: 0.5em;
+  background-color: transparent;
+}
+
+/* The thumb, or handle, of the scrollbar */
+::-webkit-scrollbar-thumb {
+  background-color: #ff4d00;
+  border-radius: 10px;
+}
+
+/* The track, or area, surrounding the thumb */
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: #fff;
+  animation: blink 1s step-end infinite;
+  margin-left: 10px;
+}
+
+@keyframes blink {
+  50% {
+    background-color: transparent;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.blurred-letter {
+  text-shadow: 3px 3px rgb(228, 228, 228);
+  position: relative;
+  color: #ff4d00;
+  font-size: 48px;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #ff8d1a, #fe3902c8);
+  -webkit-background-clip: text;
+  color: transparent;
 }
