@@ -27,7 +27,7 @@ function page2() {
       </div>
       <div className="flex flex-col justify-center items-center text-center">
         <p className="font-bold text-3xl mb-4">
-          Custom Service <br />
+          Customer Service <br />
           Chatbots
         </p>
         <p className="w-3/4 text-lg max-[1265px]:w-5/6 max-[530px]:text-base">

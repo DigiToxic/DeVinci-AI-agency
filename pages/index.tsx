@@ -1,4 +1,5 @@
 import TypingEffect from "./components/TypingEffect";
+import { motion } from "framer-motion";
 import Header from "./components/Header";
 import Page2 from "./page2";
 import Page3 from "./page3";
@@ -49,7 +50,7 @@ export default function Home() {
       <Page4 />
 
       <div className="flex justify-center">
-        <div className="w-1/2 border-t-4 my-20 border-[#ff4d0043] max-[1000px]:mt-0" />
+        <div className="w-1/2 border-t-4 my-20 border-[#ff4d0043]" />
       </div>
       <Page5 />
 
