@@ -4,7 +4,7 @@ interface BlurredTextProps {
   text: string;
 }
 
-const BlurredText: React.FC<BlurredTextProps> = ({ text }) => {
+const BlurredText: React.FC<BlurredTextProps> = ({ text = '' }) => {
   return (
     <>
       {text.split('').map((char, index) => (
