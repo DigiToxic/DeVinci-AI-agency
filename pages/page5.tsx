@@ -5,7 +5,7 @@ function page5() {
     <div className="h-full p-10 mt-10" id="Studies">
       <div className="mb-10">
         <p className="font-bold text-2xl mb-4 max-[500px]:text-center">
-          Case Studies - Companies Who've Successfully Scaled Using AI
+          Case Studies - Companies Who&rsquo;ve Successfully Scaled Using AI
         </p>
         <p className="text-xl">
           AI has been instrumental in the success and growth of many companies.
