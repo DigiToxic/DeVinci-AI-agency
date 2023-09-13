@@ -1,6 +1,31 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
+import { useEffect } from 'react';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function MyApp({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.innerHTML = `
+      (function(d, t) {
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        v.onload = function() {
+          window.voiceflow.chat.load({
+            verify: { projectID: '65007d14fbe0de0007b8ab29' },
+            url: 'https://general-runtime.voiceflow.com/',
+            versionID: 'production'
+          });
+        }
+        v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"
+        v.type = "text/javascript"; 
+        s.parentNode.insertBefore(v, s);
+      })(document, 'script');
+    `;
+    document.body.appendChild(script);
+  }, []);
+
+  return (
+      <Component {...pageProps} />
+  );
 }
+
+export default MyApp;
