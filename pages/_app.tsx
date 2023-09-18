@@ -13,9 +13,13 @@ function MyApp({ Component, pageProps }: AppProps) {
             verify: { projectID: '65007d14fbe0de0007b8ab29' },
             url: 'https://general-runtime.voiceflow.com/',
             versionID: 'production'
+          }).then(() => {
+            setTimeout(function () {
+              window.voiceflow.chat.open();
+            }, 500);
           });
-        }
-        v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"
+        };
+        v.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
         v.type = "text/javascript"; 
         s.parentNode.insertBefore(v, s);
       })(document, 'script');
